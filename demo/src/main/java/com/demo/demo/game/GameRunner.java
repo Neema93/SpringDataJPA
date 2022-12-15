@@ -1,6 +1,11 @@
 package com.demo.demo.game;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
+    @Autowired
     private GameConsole game;
     public GameRunner(GameConsole game) {
         this.game = game;
