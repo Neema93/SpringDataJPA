@@ -17,6 +17,8 @@ import com.demo.demo.socialmediaapp.entity.User;
 import com.demo.demo.socialmediaapp.exception.UserNotFoundException;
 import com.demo.demo.socialmediaapp.service.UserDaoService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class UserResource {
     @Autowired
@@ -46,7 +48,7 @@ public class UserResource {
        
     }
     @PostMapping("/user")
-    public ResponseEntity<User> createeUser(@RequestBody User user){
+    public ResponseEntity<User> createeUser(@Valid @RequestBody User user){
       User savedUser=  service.save(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
         return ResponseEntity.created(location).build();

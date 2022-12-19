@@ -2,13 +2,18 @@ package com.demo.demo.socialmediaapp.entity;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 // import jakarta.persistence.Entity;
 // import jakarta.persistence.Id;
 
 public class User {
   
     private Integer id;
+    @Size(min = 2, message = "Name should have atleast 2 characters")
     private String name;
+    @Past(message = "Birth date should in the past")
     private LocalDate birthDate;
     public User(Integer id, String name, LocalDate birthDate) {
         this.id = id;
