@@ -1,4 +1,4 @@
-package com.demo.demo.socialmediaapp.Resource;
+package com.demo.demo.socialmediaapp.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.demo.demo.socialmediaapp.entity.User;
+import com.demo.demo.socialmediaapp.exception.UserNotFoundException;
 import com.demo.demo.socialmediaapp.service.UserDaoService;
 
 @RestController
