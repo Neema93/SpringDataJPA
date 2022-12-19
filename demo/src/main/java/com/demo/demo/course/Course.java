@@ -1,4 +1,4 @@
-package com.demo.demo;
+package com.demo.demo.course;
 
 public class Course {
     private Long id;

@@ -1,4 +1,4 @@
-package com.demo.demo;
+package com.demo.demo.course;
 
 // import java.lang.reflect.Array;
 import java.util.Arrays;
