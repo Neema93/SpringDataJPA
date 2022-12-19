@@ -30,7 +30,12 @@ public class UserResource {
     }
     @GetMapping("/user/{id}")
     public User retriveUser(@PathVariable int id){
-        return service.finduser(id);
+     
+       User user = service.finduser(id);
+       if(user == null){
+        throw new UserNotFoundException("id:"+id);
+       }
+        return user;
     }
     @PostMapping("/user")
     public ResponseEntity<User> createeUser(@RequestBody User user){
