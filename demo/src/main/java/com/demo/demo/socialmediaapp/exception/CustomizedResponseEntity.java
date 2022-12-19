@@ -1,6 +1,7 @@
 package com.demo.demo.socialmediaapp.exception;
 
-import java.time.LocalDate;
+// import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +13,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class CustomizedResponseEntity extends ResponseEntityExceptionHandler{
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<Object> handleAllException(Exception ex, WebRequest request) throws Exception {
-        ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(),ex.getMessage(), request.getDescription(false));
-       return new ResponseEntity<>(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+    public final ResponseEntity<ErrorDetails> handleAllException(Exception ex, WebRequest request) throws Exception {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),ex.getMessage(), request.getDescription(false));
+       return new ResponseEntity<ErrorDetails>(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
     }
     @ExceptionHandler(UserNotFoundException.class)
-    public final ResponseEntity<Object> handleUserNotFoundException(Exception ex, WebRequest request) throws Exception {
-        ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(),ex.getMessage(), request.getDescription(false));
-       return new ResponseEntity<>(errorDetails,HttpStatus.NOT_FOUND);
+    public final ResponseEntity<ErrorDetails> handleUserNotFoundException(Exception ex, WebRequest request) throws Exception {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),ex.getMessage(), request.getDescription(false));
+       return new ResponseEntity<ErrorDetails>(errorDetails,HttpStatus.NOT_FOUND);
     }
 }
