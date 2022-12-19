@@ -2,8 +2,8 @@ package com.demo.demo.socialmediaapp.entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-@Entity
+// import jakarta.persistence.Entity;
+
 public class User {
     private Integer id;
     private String name;
