@@ -3,8 +3,10 @@ package com.demo.demo.socialmediaapp.entity;
 import java.time.LocalDate;
 
 // import jakarta.persistence.Entity;
+// import jakarta.persistence.Id;
 
 public class User {
+  
     private Integer id;
     private String name;
     private LocalDate birthDate;

@@ -12,10 +12,11 @@ import com.demo.demo.socialmediaapp.entity.User;
 @Component
 public class UserDaoService {
     private static List<User> users = new ArrayList<>();
+    public static int usersCount = 0;
     static{
-        users.add(new User(1,"Neema" ,LocalDate.now().minusYears(29)));
-        users.add(new User(2,"Meet" ,LocalDate.now().minusYears(32)));
-        users.add(new User(3,"Heeya" ,LocalDate.now().minusYears(4)));
+        users.add(new User(++usersCount,"Neema" ,LocalDate.now().minusYears(29)));
+        users.add(new User(++usersCount,"Meet" ,LocalDate.now().minusYears(32)));
+        users.add(new User(++usersCount,"Heeya" ,LocalDate.now().minusYears(4)));
     }
     public List<User> findAll(){
         return users;
@@ -24,5 +25,10 @@ public class UserDaoService {
         Predicate<? super User> Predicate = user -> user.getId().equals(id);
         return users.stream().filter(Predicate).findFirst().get();
         
+    }
+    public User save(User user){
+        user.setId(++usersCount);
+        users.add(user);
+        return user;
     }
 }

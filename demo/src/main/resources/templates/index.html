@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>User </title>
+    </head>
+    <body>
+        <h1>User List</h1>
+        <a href="#" th:href="@{'/UserForm'}">Add New user</a>
+        <table >
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Birth Date</th>
+
+            </thead>
+            <tbody>
+                <tr th:each="user : ${user}">
+                    <td th:text="${user.id}">1</td>
+                    <td th:text="${user.name}">Neema</td>
+                    <td th:text="${user.birthDate}">2014/12/11</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
