@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CorseController {
+public class CourseController {
     @GetMapping("/Course")
     public List<Course>  retriveAllCourses(){
         return Arrays.asList(
