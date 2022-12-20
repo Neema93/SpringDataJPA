@@ -6,7 +6,7 @@ public class Course {
     private String Author;
     
     public Course(){
-        
+
     }
     public Course(Long id, String name, String author) {
         this.id = id;
@@ -21,6 +21,16 @@ public class Course {
     }
     public String getAuthor() {
         return Author;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void setName(String name) {
+        Name = name;
+    }
+    public void setAuthor(String author) {
+        Author = author;
     }
     @Override
     public String toString() {
