@@ -18,10 +18,10 @@ public class CourseJdbcRepository {
             private static String SELECT_QUERY = """
                 select * from course where id = ?;
                  """;
-   public void insert(Course course){
+   public void save(Course course){
     springJdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
    }
-   public void delete(Long id){
+   public void deleteById(Long id){
     springJdbcTemplate.update(DELETE_QUERY, id);
    }
    public Course findById(Long id){

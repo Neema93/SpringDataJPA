@@ -15,10 +15,11 @@ public class CourseCommandLineRunner  implements CommandLineRunner{
     public void run(String... args) throws Exception {
 
         repository.save(new Course(1L, "Learn Java Basic" ,"Neema"));
-        repository.save(new Course(2L, "Learn Java Advance" ,"Neema"));
+        repository.save(new Course(2L, "Learn Java Advance" ,"Meena"));
         repository.save(new Course(3L, "Learn Spring boot" ,"Neema"));
         repository.deleteById(3L);
         System.out.println(repository.findById(2L));
+        System.out.println(repository.findByAuthor("Neema"));
        
     }
     

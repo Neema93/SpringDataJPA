@@ -10,7 +10,7 @@ import jakarta.transaction.Transactional;
 public class CourseJpaRepository {
     @PersistenceContext
     private EntityManager em;
-    public void insert(Course course){
+    public void save(Course course){
         em.merge(course);
     }
     public Course findById(long id){
