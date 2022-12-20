@@ -5,7 +5,9 @@ public class Course {
     private String Name;
     private String Author;
     
-    
+    public Course(){
+        
+    }
     public Course(Long id, String name, String author) {
         this.id = id;
         Name = name;

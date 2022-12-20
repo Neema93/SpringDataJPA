@@ -9,10 +9,10 @@ public class CourseJdbcRepository {
    private JdbcTemplate springJdbcTemplate;
 
    private static String INSERT_QUERY = """
-           insert into course(id, name, author) values(1, 'learn java', 'Neema');
+           insert into course(id, name, author) values(?, ?, ?);
            """;
-   public void insert(){
-    springJdbcTemplate.update(INSERT_QUERY);
+   public void insert(Course course){
+    springJdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
    }
 
 }
