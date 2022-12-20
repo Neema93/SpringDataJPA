@@ -1,6 +1,6 @@
 package com.demo.demo.socialmediaapp.exception;
 import java.time.LocalDateTime;
-import java.util.Date;
+// import java.util.Date;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -32,7 +32,7 @@ public class CustomizedResponseEntity extends ResponseEntityExceptionHandler{
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
                 ErrorDetails exceptionResponse = new ErrorDetails(LocalDateTime.now(), "Validation Failed",
 				ex.getBindingResult().toString());
-		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}	 
 }
 
