@@ -16,6 +16,7 @@ public class Question {
     private String description;
     private List<String> option;
     private String correctAnswer;
+    
     public String getId() {
         return id;
     }
@@ -27,6 +28,11 @@ public class Question {
     }
     public String getCorrectAnswer() {
         return correctAnswer;
+    }
+    @Override
+    public String toString() {
+        return "Question [id=" + id + ", description=" + description + ", option=" + option + ", correctAnswer="
+                + correctAnswer + "]";
     }
    
 
