@@ -3,41 +3,49 @@ package com.demo.demo.firstRestapi.survey;
 import java.util.List;
 
 public class Question {
-    
-    public Question() {
-    }
-    public Question(String id, String description, List<String> option, String correctAnswer) {
-        this.id = id;
-        this.description = description;
-        this.option = option;
-        this.correctAnswer = correctAnswer;
-    }
-    private String id;
-    private String description;
-    private List<String> option;
-    private String correctAnswer;
-    
-    public String getId() {
-        return id;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public List<String> getOption() {
-        return option;
-    }
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-    @Override
-    public String toString() {
-        return "Question [id=" + id + ", description=" + description + ", option=" + option + ", correctAnswer="
-                + correctAnswer + "]";
-    }
-   
 
-    
-  
-    
+	public Question() {
+
+	}
+
+	public Question(String id, String description, List<String> options, String correctAnswer) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.options = options;
+		this.correctAnswer = correctAnswer;
+	}
+
+	private String id;
+	private String description;
+	private List<String> options;
+	private String correctAnswer;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public List<String> getOptions() {
+		return options;
+	}
+
+	public String getCorrectAnswer() {
+		return correctAnswer;
+	}
+
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", description=" + description + ", options=" + options + ", correctAnswer="
+				+ correctAnswer + "]";
+	}
 
 }
