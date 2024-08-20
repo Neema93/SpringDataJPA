@@ -15,7 +15,7 @@ public class loginController {
     @PostMapping
     public String gotoWelcomePage(@RequestParam String name,Model model) {
         model.addAttribute("name",name);
-        return "indecision/welcome";
+        return "redirect:/welcome";
     }
 
     

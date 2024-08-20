@@ -4,5 +4,17 @@
     </head>
     <body>
         welcome to <span th:text="${name}"></span>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>indecision</th>
+                </tr>
+            </thead>
+            <tr th:each="indecision : ${indecisions}">
+                <td>[[${indecision.id}]]</td>
+                <td>[[${indecision.name}]]</td>
+            </tr>
+        </table>
     </body>
 </html>
